@@ -1,6 +1,7 @@
 import { Button } from "../components/Button";
 import { AnimatedBorderButton } from "../components/AnimatedBorderButton";
 import { ArrowRight } from "lucide-react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 export const Hero = () => {
     return (
@@ -66,6 +67,33 @@ export const Hero = () => {
                                 Contactez-moi <ArrowRight className="w-5 h-5"/>
                             </Button>
                             <AnimatedBorderButton />
+                        </div>
+                        {/* Suivez-moi */}
+                        <div className="flex items-center gap-4 animate-fade-in animation-delay-400">
+                            <span className="text-sm text-muted-foreground">
+                                Suivez-moi :{" "}
+                            </span>
+                            {[
+                                { icon: FaGithub, href: "https://github.com/lea-santosfranco" },
+                                { icon: FaLinkedin, href: "https://www.linkedin.com/in/lea1207/" },
+                            ].map(({ icon: Icon, href }, index) => (
+                                <a
+                                    key={index}
+                                    href={href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="p-2 rounded-full glass hover:primary/10 hover:text-primary transition-all duration-300"
+                                >
+                                    <Icon className="w-5 h-5" />
+                                </a>
+                            ))}
+                        </div>
+                    </div>
+                    {/* Colonne de droite (image) */}
+                    <div className="relative max-w-md mx-auto">
+                        <div className="absolute inset-0 rounded-3x1 bg-linear-to-br from-primary/30 via transparent to primary/10 blur-2x1 animate-pulse"/>
+                        <div className="relative glass rounded-3x1 p-2 glow-border">
+                            <img src="#" alt="photo de profil" className="w-full aspect-4/5 object-cover rounded-2x1" />
                         </div>
                     </div>
                 </div>
