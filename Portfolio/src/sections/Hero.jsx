@@ -26,12 +26,22 @@ const skills = [
     "PHP",
 ];
 
-const positions = [...Array(20)].map(() => ({
-    top: `${Math.random() * 100}%`,
-    left: `${Math.random() * 100}%`,
-    animationDuration: `${15 + Math.random() * 20}s`,
-    animationDelay: `${Math.random() * 5}s`,
-}));
+const orbs = [...Array(12)].map(() => {
+    const size = 80 + Math.random() * 160;
+    const colors = [
+        "radial-gradient(circle, #b44fff55 0%, #b44fff00 70%)",
+        "radial-gradient(circle, #ff2d9e44 0%, #ff2d9e00 70%)",
+        "radial-gradient(circle, #b44fff33 0%, #ff2d9e22 50%, transparent 70%)",
+    ];
+    return {
+        top: `${Math.random() * 100}%`,
+        left: `${Math.random() * 100}%`,
+        size,
+        background: colors[Math.floor(Math.random() * colors.length)],
+        animationDuration: `${18 + Math.random() * 22}s`,
+        animationDelay: `${Math.random() * 6}s`,
+    };
+});
 
 export const Hero = () => {
 
@@ -44,27 +54,28 @@ export const Hero = () => {
             alt="Image de fond style github"
             className="w-full h-full object-cover opacity-40"
           />
-          {/* <div POur bien voir la plateforme style repo github
-            className="absolute inset-0 bg-linear-to-b
-                         from-background/20 via-background/80 to-background "
-          /> */}
         </div>
-        {/*Carré vert type repo github*/}
-        <div className="absoute inset-0 overflow-hidden pointer-events-none">
-          {positions.map((pos, index) => (
+
+        {/* Orbes flottantes */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          {orbs.map((orb, index) => (
             <div
               key={index}
-              className="absolute w-5 h-5 opacity-50"
+              className="absolute rounded-full"
               style={{
-                backgroundColor: "#0a970a",
-                top: pos.top,
-                left: pos.left,
-                animation: `slow-drift ${pos.animationDuration} ease-in-out infinite`,
-                animationDelay: pos.animationDelay,
+                width: orb.size,
+                height: orb.size,
+                background: orb.background,
+                top: orb.top,
+                left: orb.left,
+                filter: "blur(24px)",
+                animation: `slow-drift ${orb.animationDuration} ease-in-out infinite`,
+                animationDelay: orb.animationDelay,
               }}
             />
           ))}
         </div>
+
         {/*Contenu principal*/}
         <div className="container mx-auto px-6 pt-32 pb-20 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -114,11 +125,8 @@ export const Hero = () => {
                   Suivez-moi :{" "}
                 </span>
                 {[
-                  { icon: FaGithub, href: "https://github.com/lea-santosfranco" },
-                  {
-                    icon: FaLinkedin,
-                    href: "https://www.linkedin.com/in/lea1207",
-                  },
+                  { icon: FaGithub,   href: "https://github.com/lea-santosfranco" },
+                  { icon: FaLinkedin, href: "https://www.linkedin.com/in/lea1207" },
                 ].map((social, i) => (
                   <a
                     key={i}
@@ -130,9 +138,9 @@ export const Hero = () => {
                 ))}
               </div>
             </div>
+
             {/*Colonne de droite image profil*/}
             <div className="relative animate-fade-in animation-delay-300">
-              {/* Image de profil */}
               <div className="relative max-w-md mx-auto">
                 <div
                   className="absolute inset-0 rounded-3xl bg-linear-to-br
@@ -145,7 +153,7 @@ export const Hero = () => {
                     alt="photo de profil"
                     className="w-full aspect-[4/5] object-cover rounded-2xl"
                   />
-                  {/*Bage flottant*/}
+                  {/*Badge flottant*/}
                   <div className="absolute -bottom-4 -right-4 glass rounded-xl px-4 py-3 animate-float">
                     <div className="flex items-center gap-3">
                       <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
@@ -155,12 +163,9 @@ export const Hero = () => {
                     </div>
                   </div>
                   {/* Stats du badge */}
-                  <div
-                    className="
-                                absolute -top-4 -let-4 glass rounded-xl px-4 py-3 animate-float animation-delay-500"
-                  >
+                  <div className="absolute -top-4 -let-4 glass rounded-xl px-4 py-3 animate-float animation-delay-500">
                     <div className="text-2xl font-bold text-primary">5+</div>
-                    <div className=" text-xs text-muted-foreground">
+                    <div className="text-xs text-muted-foreground">
                       Années Exp.
                     </div>
                   </div>
@@ -168,6 +173,7 @@ export const Hero = () => {
               </div>
             </div>
           </div>
+
           {/* Technologies */}
           <div className="mt-20 animate-fade-in animation-delay-600">
             <p className="text-sm text-muted-foreground mb-6 text-center">
@@ -186,10 +192,11 @@ export const Hero = () => {
             </div>
           </div>
         </div>
-        {/*scroll*/}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 
+
+        {/*Scroll*/}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2
                         animate-fade-in animation-delay-800">
-            <a 
+            <a
                 href="#about"
                 className="flex flex-col items-center gap-2 text-secondary-foreground
                            hover:text-primary transition-colors"
