@@ -32,7 +32,7 @@ export const Contact = () => {
     });
     const [isLoading, setIsLoading] = useState(false);
     const [submitStatus, setSubmitStatus] = useState({
-        type: null, 
+        type: null,
         message: "",
     });
 
@@ -45,7 +45,7 @@ export const Contact = () => {
             const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
             const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
             const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
-            
+
 
             if (!serviceId || !templateId || !publicKey) {
                 throw new Error(
@@ -55,7 +55,7 @@ export const Contact = () => {
         await emailjs.send(serviceId, templateId, {
           name: formData.name,
           email: formData.email,
-          message: formData.message,  
+          message: formData.message,
         }, publicKey);
         setSubmitStatus({
           type: "success",
@@ -66,7 +66,7 @@ export const Contact = () => {
           console.error("Emailjs error:", error)
             setSubmitStatus({
                 type: "error",
-                message: 
+                message:
                 error.text || "Une erreur s'est produite. Veuillez réessayer."
             });
         } finally {
@@ -119,7 +119,7 @@ export const Contact = () => {
                       setFormData({ ...formData, name: e.target.value })
                     }
                     placeholder="Votre nom.."
-                    className="w-full px-4 py-3 bg-surface rounded-xl border border-border transition-all 
+                    className="w-full px-4 py-3 bg-surface rounded-xl border border-border transition-all
                                             focus:border-primary focus:ring-1 focus:ring-primary outline-none"
                   />
                 </div>
@@ -137,7 +137,7 @@ export const Contact = () => {
                     onChange={(e) =>
                       setFormData({ ...formData, email: e.target.value })
                     }
-                    className="w-full px-4 py-3 bg-surface rounded-xl border border-border transition-all 
+                    className="w-full px-4 py-3 bg-surface rounded-xl border border-border transition-all
                                             focus:border-primary focus:ring-1 focus:ring-primary outline-none"
                   />
                 </div>
@@ -156,7 +156,7 @@ export const Contact = () => {
                       setFormData({ ...formData, message: e.target.value })
                     }
                     placeholder="Votre message.."
-                    className="w-full px-4 py-3 bg-surface rounded-xl border border-border transition-all 
+                    className="w-full px-4 py-3 bg-surface rounded-xl border border-border transition-all
                                focus:border-primary focus:ring-1 focus:ring-primary outline-none
                                 resize-none"
                   />
@@ -178,10 +178,10 @@ export const Contact = () => {
                 </Button>
                 {submitStatus.type && (
                   <div
-                    className={`flex items-center gap-3 p-4 rounded-xl 
+                    className={`flex items-center gap-3 p-4 rounded-xl
                       ${
                         submitStatus.type === "success"
-                          ? "bg-green-500/10 border border-green-500/20 text-green-400" 
+                          ? "bg-green-500/10 border border-green-500/20 text-green-400"
                           : "bg-red-500/10 border border-red-500/20 text-red-400"
                       }`}
                   >
@@ -203,7 +203,7 @@ export const Contact = () => {
                 </h3>
                 <div className="space-y-4">
                   {contactInfo.map((item, i) => (
-                    <a 
+                    <a
                       href={item.href}
                       key={i}
                       className="flex items-center gap-4 rounded-xl hover:bg-surface transition-colors "

@@ -69,7 +69,7 @@ export const Projects = () => {
           {/* Header Section */}
           <div className="text-center mx-auto max-w-3xl mb-16">
             <span
-              className="text-secondary-foreground text-sm font-medium tracking-wider uppercase 
+              className="text-secondary-foreground text-sm font-medium tracking-wider uppercase
                                     animation-fade-in"
             >
               Travaux vedettes
@@ -115,14 +115,14 @@ export const Projects = () => {
                   >
                     <a
                       href={project.link}
-                      className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground 
+                      className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground
                       transition-all "
                     >
                       <ArrowUpRight className="w-5 h-5" />
                     </a>
                     <a
                       href={project.github}
-                      className="p-3 rounded-full glass hover:bg-primary  hover:text-primary-foreground 
+                      className="p-3 rounded-full glass hover:bg-primary  hover:text-primary-foreground
                       transition-all "
                     >
                       <FaGithub className="w-5 h-5" />
@@ -135,9 +135,9 @@ export const Projects = () => {
                     <h3 className="text-xl font-semibold group-hover:text-primary transition-colors">
                       {project.title}
                     </h3>
-                    <ArrowUpRight 
+                    <ArrowUpRight
                       className="w-5 h-5 text-muted-foreground group-hover:text-primary
-                                 group-hover:translate-x-1 group-hover:translate-y-1 transition-all" 
+                                 group-hover:translate-x-1 group-hover:translate-y-1 transition-all"
                     />
                   </div>
                   <p className="text-muted-foreground text-sm">
@@ -145,7 +145,7 @@ export const Projects = () => {
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag, tagId) => (
-                      <span 
+                      <span
                         key={tagId}
                         className="px-4 py-1.5 rounded-full bg-surface text-xs font-medium border
                                       border-border/50 text-muted-foreground hover:border-primary/50

@@ -5,7 +5,7 @@ const highlights = [
     icon: Code2,
     title: "Clean Code",
     description:
-      "Écrire du code maintenable et évolutif qui résiste à l’épreuve du temps.",
+      "Écrire du code maintenable et évolutif qui résiste à l'épreuve du temps.",
   },
   {
     icon: Rocket,
@@ -41,7 +41,7 @@ export const About = () => {
                 </span>
               </div>
               <h2
-                className=" text-4xl md:text-5xl font-bold leading-tight animate-fade-in 
+                className=" text-4xl md:text-5xl font-bold leading-tight animate-fade-in
                                         animation-delay-100 text-secondary-foreground"
               >
                 Construisons le futur,
@@ -85,12 +85,12 @@ export const About = () => {
             {/*Colonne de droite - highligts*/}
             <div className="grid sm:grid-cols-2 gap-6">
                 {highlights.map((item, id) => (
-                    <div 
-                        key={id} 
-                        className="glass rounded-2xl p-6 animate-fade-in" 
+                    <div
+                        key={id}
+                        className="glass rounded-2xl p-6 animate-fade-in"
                         style={{animationDelay: `${id + 1 * 100}ms`}}
                     >
-                        <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center 
+                        <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center
                                         mb-4 hover:bg-primary/200">
                             <item.icon className="w-6 h-6 text-primary"/>
                         </div>
