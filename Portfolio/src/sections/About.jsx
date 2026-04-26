@@ -3,27 +3,23 @@ import { Code2, Lightbulb, Rocket, Users } from "lucide-react";
 const highlights = [
   {
     icon: Code2,
-    title: "Clean Code",
-    description:
-      "Écrire du code maintenable et évolutif qui résiste à l'épreuve du temps.",
+    title: "[Valeur 1]",
+    description: "[Description de ta première valeur ou point fort.]",
   },
   {
     icon: Rocket,
-    title: "Performance",
-    description:
-      "Optimiser la vitesse et offrir une expérience utilisateur ultra‑fluide et rapide.",
+    title: "[Valeur 2]",
+    description: "[Description de ta deuxième valeur ou point fort.]",
   },
   {
     icon: Users,
-    title: "Collaboration",
-    description:
-      "Travailler en étroite collaboration avec les équipes pour concrétiser les idées. ",
+    title: "[Valeur 3]",
+    description: "[Description de ta troisième valeur ou point fort.]",
   },
   {
     icon: Lightbulb,
-    title: "Innovation",
-    description:
-      "Rester à la pointe des dernières technologies et des bonnes pratiques. ",
+    title: "[Valeur 4]",
+    description: "[Description de ta quatrième valeur ou point fort.]",
   },
 ];
 
@@ -44,41 +40,20 @@ export const About = () => {
                 className=" text-4xl md:text-5xl font-bold leading-tight animate-fade-in
                                         animation-delay-100 text-secondary-foreground"
               >
-                Construisons le futur,
+                [Titre accrocheur],
                 <span className="font-serif italic font-normal text-white">
                   {" "}
-                  un composant, un projet à la fois.
+                  [sous-titre en italique.]
                 </span>
               </h2>
               <div className="space-y-4 text-muted-foreground animate-fade-in animation-delay-200">
-                <p>
-                  Je suis un developpeur et formateur passionné avec plus de 5
-                  ans d'expérience dans la création de produits numériques, de
-                  support de cours qui font la différence. Mon parcours a débuté
-                  par une curiosité pour le fonctionnement des choses dans le
-                  monde, et il a évolué vers une expertise approfondie des
-                  technologies frontend et backend modernes.
-                </p>
-                <p>
-                  Je me suis spécialisé en Symfony, React, Next.js et TypeScript
-                  construisant tout, des pages d'Accueil élégantes aux
-                  applications d'entreprise complexes. Mon approche combine
-                  excellence technique, un oeil aiguisé pour le design et
-                  l'expérience utilisateur.
-                </p>
-                <p>
-                  Quand je ne code pas, j'explore de nouvelles technologies, me
-                  met à jour sur les IA générative ou autres et contribue à des
-                  projets open source, ou partageant mes connaissances avec la
-                  communauté des développeurs.
-                </p>
+                <p>[Paragraphe 1 — ton parcours et qui tu es.]</p>
+                <p>[Paragraphe 2 — ta spécialité et ce que tu sais faire.]</p>
+                <p>[Paragraphe 3 — ce qui te motive ou ta vie en dehors du code.]</p>
               </div>
               <div className="glass rounded-2xl p-6 glow-border animate-fade-in animation-delay-300">
                 <p className="text-lg font-medium italic text-foreground">
-                  Ma mission est de créer des expériences numériques qui ne sont
-                  pas seulement fonctionnelles, mais véritablement agréable -
-                  des produits que les utilisateurs adorent utiliser et que les
-                  développeurs adoreront maintenir.
+                  [Citation ou phrase qui te représente.]
                 </p>
               </div>
             </div>

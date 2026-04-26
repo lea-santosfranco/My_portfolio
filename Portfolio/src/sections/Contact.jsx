@@ -1,26 +1,25 @@
 import {Mail, Phone, MapPin, Send, CheckCircle, AlertCircle} from "lucide-react";
 import {Button} from "@/components/Button"
 import { useState } from "react";
-import emailjs from "@emailjs/browser";
 
 const contactInfo = [
     {
         icon: Mail,
         label: "Email",
-        value: "chabanaisjeremie@gmail.com",
-        href: "mailto:chabanaisjeremie@gmail.com"
+        value: "lea.santosfrancopro@gmail.com",
+        href: "mailto:lea.santosfrancopro@gmail.com"
     },
-      {
+    {
         icon: Phone,
-        label: "Tèl",
-        value: "+33 6 34 26 31 10",
-        href: "tel:+33634263110"
+        label: "Tél",
+        value: "+33 6 18 26 09 67",
+        href: "tel:+33618260967"
     },
-      {
+    {
         icon: MapPin,
-        label: "Location",
-        value: "Bordeaux, France",
-        href: "https://www.google.com/maps/place/Bordeaux"
+        label: "Localisation",
+        value: "Mérignac, France",
+        href: "https://www.google.com/maps/place/Mérignac"
     }
 ];
 
@@ -42,35 +41,36 @@ export const Contact = () => {
         setIsLoading(true);
         setSubmitStatus({type: null, message: ""});
         try {
-            const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-            const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-            const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
-
-
-            if (!serviceId || !templateId || !publicKey) {
-                throw new Error(
-                    "EmailJS configuration is incomplete. Please check your evironment variables"
-                );
+            const response = await fetch("https://formsubmit.co/ajax/lea.santosfrancopro@gmail.com", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Accept": "application/json",
+                },
+                body: JSON.stringify({
+                    name: formData.name,
+                    email: formData.email,
+                    message: formData.message,
+                }),
+            });
+            const result = await response.json();
+            if (result.success) {
+                setSubmitStatus({
+                    type: "success",
+                    message: "Message bien délivré, je reviens vers vous plus tard.",
+                });
+                setFormData({name: "", email: "", message: ""});
+            } else {
+                throw new Error(result.message || "Envoi échoué");
             }
-        await emailjs.send(serviceId, templateId, {
-          name: formData.name,
-          email: formData.email,
-          message: formData.message,
-        }, publicKey);
-        setSubmitStatus({
-          type: "success",
-          message: "Message bien délivré, je reviens vers vous plus tard."
-        });
-        setFormData({name: "", email: "", message: ""});
         } catch (error) {
-          console.error("Emailjs error:", error)
+            console.error("FormSubmit error:", error);
             setSubmitStatus({
                 type: "error",
-                message:
-                error.text || "Une erreur s'est produite. Veuillez réessayer."
+                message: "Une erreur s'est produite. Veuillez réessayer.",
             });
         } finally {
-            setIsLoading(false)
+            setIsLoading(false);
         }
     };
 

@@ -2,44 +2,50 @@ import { Button } from "../components/Button";
 import { ArrowRight, ChevronDown, Download } from "lucide-react";
 import { AnimatedBorderButton } from "../components/AnimatedBorderButton";
 import { FaGithub, FaLinkedin } from "react-icons/fa6";
+import {
+  SiJavascript, SiTypescript, SiPython, SiDart, SiPhp,
+  SiReact, SiFlutter, SiSymfony, SiNodedotjs,
+  SiHtml5, SiCss, SiTailwindcss,
+  SiGit, SiGithub, SiDocker, SiSupabase, SiMysql,
+} from "react-icons/si";
 
 const skills = [
-    "IA",
-    "JavaScript",
-    "React",
-    "React Native",
-    "Node.js",
-    "TypeScript",
-    "MongoDB",
-    "HTML5",
-    "CSS3",
-    "Tailwind CSS",
-    "Next.js",
-    "Express.js",
-    "Figma",
-    "Git",
-    "Docker",
-    "Github Actions",
-    "PostgreSQL",
-    "SQL",
-    "WordPress",
-    "PHP",
+  { label: "JavaScript",   Icon: SiJavascript,  color: "#F7DF1E" },
+  { label: "TypeScript",   Icon: SiTypescript,  color: "#3178C6" },
+  { label: "Python",       Icon: SiPython,      color: "#3776AB" },
+  { label: "Dart",         Icon: SiDart,        color: "#00B4AB" },
+  { label: "PHP",          Icon: SiPhp,         color: "#8892be" },
+  { label: "React",        Icon: SiReact,       color: "#61DAFB" },
+  { label: "React Native", Icon: SiReact,       color: "#61DAFB" },
+  { label: "Flutter",      Icon: SiFlutter,     color: "#54C5F8" },
+  { label: "Symfony",      Icon: SiSymfony,     color: "#ffffff" },
+  { label: "Node.js",      Icon: SiNodedotjs,   color: "#339933" },
+  { label: "HTML",         Icon: SiHtml5,       color: "#E34F26" },
+  { label: "CSS",          Icon: SiCss,         color: "#264de4" },
+  { label: "Tailwind CSS", Icon: SiTailwindcss, color: "#06B6D4" },
+  { label: "Git",          Icon: SiGit,         color: "#F05032" },
+  { label: "GitHub",       Icon: SiGithub,      color: "#ffffff" },
+  { label: "Docker",       Icon: SiDocker,      color: "#2496ED" },
+  { label: "Supabase",     Icon: SiSupabase,    color: "#3ECF8E" },
+  { label: "MySQL",        Icon: SiMysql,       color: "#4479A1" },
 ];
 
-const orbs = [...Array(12)].map(() => {
-    const size = 80 + Math.random() * 160;
-    const colors = [
-        "radial-gradient(circle, #b44fff55 0%, #b44fff00 70%)",
-        "radial-gradient(circle, #ff2d9e44 0%, #ff2d9e00 70%)",
-        "radial-gradient(circle, #b44fff33 0%, #ff2d9e22 50%, transparent 70%)",
-    ];
+const colors = [
+    "radial-gradient(circle, #b44fff77 0%, #b44fff00 70%)",
+    "radial-gradient(circle, #ff2d9e66 0%, #ff2d9e00 70%)",
+    "radial-gradient(circle, #b44fff55 0%, #ff2d9e44 50%, transparent 70%)",
+];
+
+const orbs = [...Array(12)].map((_, i) => {
+    const col = i % 4;
+    const row = Math.floor(i / 4);
     return {
-        top: `${Math.random() * 100}%`,
-        left: `${Math.random() * 100}%`,
-        size,
-        background: colors[Math.floor(Math.random() * colors.length)],
-        animationDuration: `${18 + Math.random() * 22}s`,
-        animationDelay: `${Math.random() * 6}s`,
+        top: `${(row / 3) * 100 + Math.random() * 30}%`,
+        left: `${(col / 4) * 100 + Math.random() * 22}%`,
+        size: 150 + Math.random() * 250,
+        background: colors[i % colors.length],
+        animationDuration: `${14 + Math.random() * 10}s`,
+        animationDelay: `${Math.random() * 4}s`,
     };
 });
 
@@ -47,15 +53,6 @@ export const Hero = () => {
 
     return (
       <section className="relative min-h-screen flex items-center overflow-hidden">
-        {/* Background */}
-        <div className="absolute inset-0">
-          <img
-            src="/bg-typeGithub.png"
-            alt="Image de fond style github"
-            className="w-full h-full object-cover opacity-40"
-          />
-        </div>
-
         {/* Orbes flottantes */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           {orbs.map((orb, index) => (
@@ -78,116 +75,71 @@ export const Hero = () => {
 
         {/*Contenu principal*/}
         <div className="container mx-auto px-6 pt-32 pb-20 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/*Colonne de gauche contenu textuel*/}
-            <div className="space-y-8">
-              <div className="animate-fade-in">
-                <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm text-primary">
-                  <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-                  Software
+          <div className="max-w-5xl mx-auto text-center space-y-8">
+            {/*Titre principal*/}
+            <div className="space-y-6">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in animation-delay-100">
+                Développeuse{" "}
+                <span className="text-primary glow-text">Fullstack</span>
+                <br />
+                <span className="font-serif italic font-normal text-white">
+                  Web & Mobile
                 </span>
+              </h1>
+              <div className="flex justify-center animate-fade-in animation-delay-200">
+                <div className="h-1 w-24 rounded-full bg-gradient-to-r from-primary to-highlight" />
               </div>
-              {/*Titre principal*/}
-              <div className="space-y-4">
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight animate-fade-in animation-delay-100">
-                  Développeur{" "}
-                  <span className="text-primary glow-text">Fullstack</span>
-                  <br />
-                  passionné par le code
-                  <br />
-                  <span className="font-serif italic font-normal text-white">
-                    et les défis web.
-                  </span>
-                </h1>
-                <p className="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-600">
-                  Bonjour, je suis Léa SANTOS FRANCO
-                  <br />
-                  Je conçois et développe des applications web et mobile.
-                </p>
-              </div>
-              {/*Bouton d'appel à l'action*/}
-              <div className="flex flex-wrap gap-4 animate-fade-in animation-delay-300">
-                <Button
-                  href="#contact"
-                  size="lg"
-                  className="animate-fade-in animation-delay-800"
-                >
-                  Contactez-moi <ArrowRight className="w-5 h-5" />
-                </Button>
-                <AnimatedBorderButton>
-                  <Download className="w-5 h-5"/>
-                  Download CV
-                </AnimatedBorderButton>
-              </div>
-              {/* Réseau sociaux */}
-              <div className="flex items-center gap-4 animate-fade-in animation-delay-400">
-                <span className="text-sm text-muted-foreground">
-                  Suivez-moi :{" "}
-                </span>
-                {[
-                  { icon: FaGithub,   href: "https://github.com/lea-santosfranco" },
-                  { icon: FaLinkedin, href: "https://www.linkedin.com/in/lea1207" },
-                ].map((social, i) => (
-                  <a
-                    key={i}
-                    href={social.href}
-                    className="p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all duration-300"
-                  >
-                    {<social.icon className="w-5 h-5" />}
-                  </a>
-                ))}
-              </div>
+              <p className="text-lg text-muted-foreground max-w-xl mx-auto animate-fade-in animation-delay-600">
+                Bonjour, je suis Léa SANTOS FRANCO.
+                Je conçois et développe des applications web et mobile.
+              </p>
             </div>
 
-            {/*Colonne de droite image profil*/}
-            <div className="relative animate-fade-in animation-delay-300">
-              <div className="relative max-w-md mx-auto">
-                <div
-                  className="absolute inset-0 rounded-3xl bg-linear-to-br
-                                from-primary/30 via-transparent to primary/10
-                                blur-2xl animate-pulse"
-                />
-                <div className="relative glass rounded-3xl p-2 glow-border">
-                  <img
-                    src="/BaldMan.jpg"
-                    alt="photo de profil"
-                    className="w-full aspect-[4/5] object-cover rounded-2xl"
-                  />
-                  {/*Badge flottant*/}
-                  <div className="absolute -bottom-4 -right-4 glass rounded-xl px-4 py-3 animate-float">
-                    <div className="flex items-center gap-3">
-                      <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
-                      <span className="text-sm font-medium">
-                        Disponible pour de nouvelles opportunités
-                      </span>
-                    </div>
-                  </div>
-                  {/* Stats du badge */}
-                  <div className="absolute -top-4 -let-4 glass rounded-xl px-4 py-3 animate-float animation-delay-500">
-                    <div className="text-2xl font-bold text-primary">5+</div>
-                    <div className="text-xs text-muted-foreground">
-                      Années Exp.
-                    </div>
-                  </div>
-                </div>
-              </div>
+            {/*Boutons*/}
+            <div className="flex flex-wrap justify-center gap-4 animate-fade-in animation-delay-300">
+              <Button href="#contact" size="lg">
+                Contactez-moi <ArrowRight className="w-5 h-5" />
+              </Button>
+              <AnimatedBorderButton href="/cv.pdf" download="CV_Lea_Santos_Franco.pdf">
+              </AnimatedBorderButton>
+            </div>
+
+            {/* Réseaux sociaux */}
+            <div className="flex items-center justify-center gap-4 animate-fade-in animation-delay-400">
+              <span className="text-sm text-muted-foreground">Suivez-moi :</span>
+              {[
+                { icon: FaGithub,   href: "https://github.com/lea-santosfranco" },
+                { icon: FaLinkedin, href: "https://www.linkedin.com/in/lea1207" },
+              ].map((social, i) => (
+                <a
+                  key={i}
+                  href={social.href}
+                  className="p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all duration-300"
+                >
+                  <social.icon className="w-5 h-5" />
+                </a>
+              ))}
             </div>
           </div>
 
           {/* Technologies */}
-          <div className="mt-20 animate-fade-in animation-delay-600">
+          <div className="mt-24 animate-fade-in animation-delay-600">
             <p className="text-sm text-muted-foreground mb-6 text-center">
-                Technologie pratiqués
+              Ma stack
             </p>
             <div className="relative overflow-hidden">
               <div className="flex animate-marquee">
                 {[...skills, ...skills].map((skill, id) => (
-                <div key={id} className="shrink-0 px-8 py-4 ">
-                    <span className="text-xl font-semibold text-muted-foreground/50 hover:text-secondary-foreground transition-colors">
-                        {skill}
+                  <div key={id} className="shrink-0 flex items-center gap-2 px-7 py-4">
+                    <skill.Icon
+                      className="w-5 h-5 shrink-0"
+                      style={{ color: skill.color }}
+                    />
+                    <span className="text-lg font-semibold text-muted-foreground/50 hover:text-secondary-foreground transition-colors whitespace-nowrap">
+                      {skill.label}
                     </span>
-                </div>
-              ))}
+                  </div>
+                ))}
               </div>
             </div>
           </div>
