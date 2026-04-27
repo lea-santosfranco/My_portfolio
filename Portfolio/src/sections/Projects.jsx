@@ -19,7 +19,7 @@ export const Projects = () => {
           <div className="text-center mx-auto max-w-3xl mb-16">
             <span
               className="text-primary text-sm font-medium tracking-wider uppercase
-                                    animation-fade-in"
+                                    animate-fade-in"
             >
               Mes réalisations
             </span>
@@ -43,7 +43,7 @@ export const Projects = () => {
               <div
                 key={id}
                 className="group glass rounded-2xl overflow-hidden animate-fade-in md:row-span-1"
-                style={{ animationDelay: `${id + 1 * 100}ms` }}
+                style={{ animationDelay: `${(id + 1) * 100}ms` }}
               >
                 {/*Image des projets*/}
                 <div className="relative overflow-hidden aspect-video">

@@ -100,7 +100,7 @@ export const Hero = () => {
               <Button href="#contact" size="lg">
                 Contactez-moi <ArrowRight className="w-5 h-5" />
               </Button>
-              <AnimatedBorderButton href="/cv.pdf" download="CV_Lea_Santos_Franco.pdf">
+              <AnimatedBorderButton href={`${import.meta.env.BASE_URL}cv.pdf`} download="CV_Lea_Santos_Franco.pdf">
               </AnimatedBorderButton>
             </div>
 

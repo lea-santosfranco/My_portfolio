@@ -128,6 +128,8 @@ export const Contact = () => {
                     Email
                   </label>
                   <input
+                    type="email"
+                    id="email"
                     required
                     placeholder="votre@email.com"
                     value={formData.email}
