@@ -30,7 +30,7 @@ jobs:
         working-directory: Portfolio
 
       - name: Build
-        run: npm run build
+        run: npm run build -- --base /My_portfolio/
         working-directory: Portfolio
 
       - uses: actions/upload-pages-artifact@v3
