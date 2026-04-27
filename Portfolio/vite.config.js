@@ -7,6 +7,7 @@ const __dirname = import.meta.dirname;
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/My_portfolio/',
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
