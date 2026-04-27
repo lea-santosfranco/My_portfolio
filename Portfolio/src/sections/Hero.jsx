@@ -80,7 +80,7 @@ export const Hero = () => {
             <div className="space-y-6">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in animation-delay-100">
                 Développeuse{" "}
-                <span className="text-primary glow-text">Fullstack</span>
+                <span className="text-primary glow-text">Full-Stack</span>
                 <br />
                 <span className="font-serif italic font-normal text-white">
                   Web & Mobile
@@ -90,7 +90,7 @@ export const Hero = () => {
                 <div className="h-1 w-24 rounded-full bg-gradient-to-r from-primary to-highlight" />
               </div>
               <p className="text-lg text-muted-foreground max-w-xl mx-auto animate-fade-in animation-delay-600">
-                Bonjour, je suis Léa SANTOS FRANCO.
+                Bonjour, je suis Léa Santos Franco.
                 Je conçois et développe des applications web et mobile.
               </p>
             </div>
@@ -124,8 +124,8 @@ export const Hero = () => {
 
           {/* Technologies */}
           <div className="mt-24 animate-fade-in animation-delay-600">
-            <p className="text-sm text-muted-foreground mb-6 text-center">
-              Ma stack
+            <p className="text-xs text-primary font-medium tracking-widest uppercase mb-6 text-center">
+              Stack technique
             </p>
             <div className="relative overflow-hidden">
               <div className="flex animate-marquee">

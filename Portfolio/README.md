@@ -1,16 +1,60 @@
-# React + Vite
+# Portfolio — Léa Santos Franco
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Portfolio personnel de développeuse full-stack web et mobile, conçu pour présenter mon parcours, mes compétences et mes projets.
 
-Currently, two official plugins are available:
+## Stack technique
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **React 19** — UI
+- **Vite 8** — bundler et serveur de développement
+- **Tailwind CSS 4** — styles
+- **Lucide React** — icônes
+- **React Icons** — icônes de technologies (GitHub, LinkedIn, stack technique)
+- **FormSubmit** — gestion des envois du formulaire de contact sans back-end
 
-## React Compiler
+## Structure du projet
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```
+src/
+├── layout/
+│   ├── Navbar.jsx
+│   └── Footer.jsx
+├── sections/
+│   ├── Hero.jsx
+│   ├── About.jsx
+│   ├── Projects.jsx
+│   └── Contact.jsx
+├── components/
+│   ├── Button.jsx
+│   └── AnimatedBorderButton.jsx
+├── App.jsx
+└── index.css
+```
 
-## Expanding the ESLint configuration
+## Lancer le projet
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm install
+npm run dev
+```
+
+## Build
+
+```bash
+npm run build
+npm run preview
+```
+
+## Ajouter un projet
+
+Les projets sont définis dans le tableau `projects` dans `src/sections/Projects.jsx`. Chaque entrée accepte les champs suivants :
+
+```js
+{
+  title: "Nom du projet",
+  description: "Description courte.",
+  image: "/images/mon-projet.png", // ou null
+  tags: ["React", "Node.js"],
+  link: "https://...",
+  github: "https://github.com/...",
+}
+```

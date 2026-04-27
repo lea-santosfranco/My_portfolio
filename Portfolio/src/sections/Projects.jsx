@@ -1,40 +1,11 @@
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Clock } from "lucide-react";
 import { FaGithub } from "react-icons/fa6";
-import { AnimatedBorderButton} from "@/components/AnimatedBorderButton";
 
 const projects = [
-  {
-    title: "[Nom du projet 1]",
-    description: "[Description courte du projet — ce qu'il fait, pour qui, le contexte.]",
-    image: null,
-    tags: ["[Tech 1]", "[Tech 2]"],
-    link: "#",
-    github: "#",
-  },
-  {
-    title: "[Nom du projet 2]",
-    description: "[Description courte du projet — ce qu'il fait, pour qui, le contexte.]",
-    image: null,
-    tags: ["[Tech 1]", "[Tech 2]"],
-    link: "#",
-    github: "#",
-  },
-  {
-    title: "[Nom du projet 3]",
-    description: "[Description courte du projet — ce qu'il fait, pour qui, le contexte.]",
-    image: null,
-    tags: ["[Tech 1]", "[Tech 2]"],
-    link: "#",
-    github: "#",
-  },
-  {
-    title: "[Nom du projet 4]",
-    description: "[Description courte du projet — ce qu'il fait, pour qui, le contexte.]",
-    image: null,
-    tags: ["[Tech 1]", "[Tech 2]"],
-    link: "#",
-    github: "#",
-  },
+  { title: "Bientôt disponible", description: "Ce projet sera présenté ici très prochainement.", image: null, tags: [], link: "#", github: "#" },
+  { title: "Bientôt disponible", description: "Ce projet sera présenté ici très prochainement.", image: null, tags: [], link: "#", github: "#" },
+  { title: "Bientôt disponible", description: "Ce projet sera présenté ici très prochainement.", image: null, tags: [], link: "#", github: "#" },
+  { title: "Bientôt disponible", description: "Ce projet sera présenté ici très prochainement.", image: null, tags: [], link: "#", github: "#" },
 ];
 
 export const Projects = () => {
@@ -47,23 +18,23 @@ export const Projects = () => {
           {/* Header Section */}
           <div className="text-center mx-auto max-w-3xl mb-16">
             <span
-              className="text-secondary-foreground text-sm font-medium tracking-wider uppercase
+              className="text-primary text-sm font-medium tracking-wider uppercase
                                     animation-fade-in"
             >
-              [Sous-titre de section]
+              Mes réalisations
             </span>
             <h2
               className="text-4xl md:text-5xl font-bold mt-4 mb-6 animate-fade-in animation-delay-100
                                 text-secondary-foreground"
             >
-              [Titre de la section]
+              Des projets concrets,
               <span className="font-serif italic font-normal text-white">
                 {" "}
-                [en italique]
+                bientôt à découvrir.
               </span>
             </h2>
             <p className="text-muted-foreground animate-fade-in animation-delay-200">
-              [Phrase d'introduction de tes projets.]
+              Je travaille actuellement sur plusieurs réalisations web et mobile. Elles seront disponibles ici très prochainement.
             </p>
           </div>
           {/*Projet avec grid */}
@@ -83,8 +54,9 @@ export const Projects = () => {
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
                   ) : (
-                    <div className="w-full h-full bg-muted flex items-center justify-center text-muted-foreground text-sm">
-                      [Image du projet]
+                    <div className="w-full h-full bg-muted/20 flex flex-col items-center justify-center gap-3 text-muted-foreground">
+                      <Clock className="w-8 h-8 opacity-40" />
+                      <span className="text-sm font-medium tracking-wider uppercase opacity-60">À venir</span>
                     </div>
                   )}
                   <div
@@ -140,13 +112,6 @@ export const Projects = () => {
                 </div>
               </div>
             ))}
-          </div>
-          {/* Vue de tout les projets*/}
-          <div className="text-center mt-12 animate-fade-in animation-delay-500">
-            <AnimatedBorderButton>
-              Voir tous les projets
-              <ArrowUpRight className="w-5 h-5" />
-            </AnimatedBorderButton>
           </div>
         </div>
       </section>
