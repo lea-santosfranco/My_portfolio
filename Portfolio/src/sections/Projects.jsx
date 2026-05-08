@@ -1,11 +1,13 @@
 import { ArrowUpRight, Clock } from "lucide-react";
 import { FaGithub } from "react-icons/fa6";
 
+const base = import.meta.env.BASE_URL;
+
 const projects = [
   {
     title: "Pomodoro Timer",
     description: "Application de gestion du temps basée sur la méthode Pomodoro. Timer configurable avec pauses courtes et longues, cercle de progression animé et mémorisation des préférences via le local storage.",
-    image: "/projectImage/pomodoro-preview.png",
+    image: `${base}projectImage/pomodoro-preview.png`,
     tags: ["React 19", "Vite", "JavaScript", "CSS"],
     link: "#",
     github: "https://github.com/lea-santosfranco/Pomodoro_timer",
@@ -13,7 +15,7 @@ const projects = [
   {
     title: "Journal de voyage interactif",
     description: "Journal de voyage interactif pour documenter et partager des aventures. Premier voyage présenté : le Portugal.",
-    image: "/projectImage/portugal-preview.png",
+    image: `${base}projectImage/portugal-preview.png`,
     tags: ["JavaScript", "CSS", "HTML"],
     link: "#",
     github: "https://github.com/lea-santosfranco/interactive_travel_journal",
