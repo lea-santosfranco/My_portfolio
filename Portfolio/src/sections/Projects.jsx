@@ -2,8 +2,22 @@ import { ArrowUpRight, Clock } from "lucide-react";
 import { FaGithub } from "react-icons/fa6";
 
 const projects = [
-  { title: "Bientôt disponible", description: "Ce projet sera présenté ici très prochainement.", image: null, tags: [], link: "#", github: "#" },
-  { title: "Bientôt disponible", description: "Ce projet sera présenté ici très prochainement.", image: null, tags: [], link: "#", github: "#" },
+  {
+    title: "Pomodoro Timer",
+    description: "Application de gestion du temps basée sur la méthode Pomodoro. Timer configurable avec pauses courtes et longues, cercle de progression animé et mémorisation des préférences via le local storage.",
+    image: null,
+    tags: ["React 19", "Vite", "JavaScript", "CSS"],
+    link: "#",
+    github: "https://github.com/lea-santosfranco/Pomodoro_timer",
+  },
+  {
+    title: "Journal de voyage interactif",
+    description: "Journal de voyage interactif pour documenter et partager des aventures. Premier voyage présenté : le Portugal.",
+    image: null,
+    tags: ["JavaScript", "CSS", "HTML"],
+    link: "#",
+    github: "https://github.com/lea-santosfranco/interactive_travel_journal",
+  },
   { title: "Bientôt disponible", description: "Ce projet sera présenté ici très prochainement.", image: null, tags: [], link: "#", github: "#" },
   { title: "Bientôt disponible", description: "Ce projet sera présenté ici très prochainement.", image: null, tags: [], link: "#", github: "#" },
 ];
@@ -30,11 +44,11 @@ export const Projects = () => {
               Des projets concrets,
               <span className="font-serif italic font-normal text-white">
                 {" "}
-                bientôt à découvrir.
+                à explorer.
               </span>
             </h2>
             <p className="text-muted-foreground animate-fade-in animation-delay-200">
-              Je travaille actuellement sur plusieurs réalisations web et mobile. Elles seront disponibles ici très prochainement.
+              Voici une sélection de mes réalisations. D'autres projets seront ajoutés prochainement.
             </p>
           </div>
           {/*Projet avec grid */}
