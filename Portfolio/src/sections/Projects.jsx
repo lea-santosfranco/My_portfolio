@@ -5,7 +5,7 @@ const projects = [
   {
     title: "Pomodoro Timer",
     description: "Application de gestion du temps basée sur la méthode Pomodoro. Timer configurable avec pauses courtes et longues, cercle de progression animé et mémorisation des préférences via le local storage.",
-    image: null,
+    image: "/projectImage/pomodoro-preview.png",
     tags: ["React 19", "Vite", "JavaScript", "CSS"],
     link: "#",
     github: "https://github.com/lea-santosfranco/Pomodoro_timer",
@@ -13,7 +13,7 @@ const projects = [
   {
     title: "Journal de voyage interactif",
     description: "Journal de voyage interactif pour documenter et partager des aventures. Premier voyage présenté : le Portugal.",
-    image: null,
+    image: "/projectImage/portugal-preview.png",
     tags: ["JavaScript", "CSS", "HTML"],
     link: "#",
     github: "https://github.com/lea-santosfranco/interactive_travel_journal",
@@ -68,9 +68,9 @@ export const Projects = () => {
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
                   ) : (
-                    <div className="w-full h-full bg-muted/20 flex flex-col items-center justify-center gap-3 text-muted-foreground">
-                      <Clock className="w-8 h-8 opacity-40" />
-                      <span className="text-sm font-medium tracking-wider uppercase opacity-60">À venir</span>
+                    <div className="w-full h-full bg-secondary/40 flex flex-col items-center justify-center gap-3 text-muted-foreground border-b border-border/30">
+                      <Clock className="w-8 h-8 opacity-70" />
+                      <span className="text-sm font-medium tracking-wider uppercase opacity-80">À venir</span>
                     </div>
                   )}
                   <div
